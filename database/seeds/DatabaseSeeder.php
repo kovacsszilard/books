@@ -1,5 +1,6 @@
 <?php
 
+use App\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,7 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory(App\Book::class, 1000)->create();
+
+
+        $this->call([
+            CategorySeeder::class,
+            BookSeeder::class,
+
+
+        ]);
         // $this->call(UserSeeder::class);
 //        DB::table('books')->insert([
 //            'title' => Str::random(10),
