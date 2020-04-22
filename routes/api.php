@@ -23,6 +23,8 @@ Route::put('/book/{id}', 'BookController@update')->name('Update');
 Route::delete('/book/{id}', 'BookController@destroy')->name('Delete');
 Route::get('/book/{id}', 'BookController@show')->name('Show');
 
+Route::get('/book_cat/{id}', 'BookController@indexByCat')->name('index_cat');
+
 Route::post('/Category', 'api\CategoriesController@store');
 Route::get('/Category', 'api\CategoriesController@index')->name('Lista');
 Route::put('/Category/{id}', 'api\CategoriesController@show')->name('Update');

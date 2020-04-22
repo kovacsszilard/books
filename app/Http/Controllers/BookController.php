@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,12 @@ class BookController extends Controller
     {
         return Book::all();
     }
+    public function indexByCat($catId)
+    {
+        return Book::all()->where('category_id', $catId);
+//        return Category;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
