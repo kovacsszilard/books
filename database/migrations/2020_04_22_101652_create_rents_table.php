@@ -15,7 +15,8 @@ class CreateRentsTable extends Migration
     {
         Schema::create('rents', function (Blueprint $table) {
             $table->id();
-            $table->string('cust_id');
+            $table->unsignedBigInteger('cust_id');
+            $table->foreign('cust_id')->references('id')->on('customers');
             $table->string('book_id');
             $table->date('rent_date');
             $table->date('back_date');

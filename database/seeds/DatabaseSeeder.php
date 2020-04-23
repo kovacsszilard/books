@@ -1,6 +1,8 @@
 <?php
 
 use App\Category;
+use App\Customer;
+use App\Payment;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,8 +17,11 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
+            CustomerSeeder::class,
             CategorySeeder::class,
+            PaymentSeder::class,
             BookSeeder::class,
+            RentSeeder::class,
 
 
         ]);

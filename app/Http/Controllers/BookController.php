@@ -20,7 +20,15 @@ class BookController extends Controller
     }
     public function indexByCat($catId)
     {
-        return Book::all()->where('category_id', $catId);
+
+        $booksByCatId = Book::with('category')->where('category_id', $catId)->get();
+//            ->where('category_id', $catId);
+return $booksByCatId;
+        foreach ($booksByCatId as $book) {
+            echo $book->category_id->cat_name;
+        }
+//        return Book::all()->where('category_id', $catId);
+       // return Book::has('categories')->get();
 //        return Category;
     }
 
